@@ -26,6 +26,10 @@
 		B1C2F1AA29221CFD006F5E8A /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1C2F1A129221CFD006F5E8A /* Pretendard-Bold.otf */; };
 		B1C2F1AB29221CFD006F5E8A /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1C2F1A229221CFD006F5E8A /* Pretendard-ExtraLight.otf */; };
 		B1C2F1AC29221CFD006F5E8A /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1C2F1A329221CFD006F5E8A /* Pretendard-Light.otf */; };
+		D5A6A24F2927EB7E0059A289 /* bookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6A24E2927EB7E0059A289 /* bookingViewController.swift */; };
+		D5A6A2512927EC440059A289 /* discountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6A2502927EC440059A289 /* discountViewController.swift */; };
+		D5A6A2532927EC5C0059A289 /* productViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6A2522927EC5C0059A289 /* productViewController.swift */; };
+		D5A6A2552927EC6D0059A289 /* ticketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6A2542927EC6D0059A289 /* ticketViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		B1C2F1A129221CFD006F5E8A /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		B1C2F1A229221CFD006F5E8A /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		B1C2F1A329221CFD006F5E8A /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		D5A6A24E2927EB7E0059A289 /* bookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookingViewController.swift; sourceTree = "<group>"; };
+		D5A6A2502927EC440059A289 /* discountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = discountViewController.swift; sourceTree = "<group>"; };
+		D5A6A2522927EC5C0059A289 /* productViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productViewController.swift; sourceTree = "<group>"; };
+		D5A6A2542927EC6D0059A289 /* ticketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ticketViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,21 +93,12 @@
 				B1C2F19A29221CDE006F5E8A /* Fonts */,
 				B1C2F182291F8CB8006F5E8A /* Tabbar */,
 				B1C2F17F291F8AE3006F5E8A /* Application */,
-				B1C2F17E291F899D006F5E8A /* Booking */,
 				B1C2F167291F824B006F5E8A /* Assets.xcassets */,
 				B1C2F169291F824B006F5E8A /* LaunchScreen.storyboard */,
 				B1C2F16C291F824B006F5E8A /* Info.plist */,
+				D5A6A23729265AC60059A289 /* Booking */,
 			);
 			path = KorailTalk;
-			sourceTree = "<group>";
-		};
-		B1C2F17E291F899D006F5E8A /* Booking */ = {
-			isa = PBXGroup;
-			children = (
-				B1C2F181291F8B36006F5E8A /* Models */,
-				B1C2F180291F8B13006F5E8A /* Views */,
-			);
-			path = Booking;
 			sourceTree = "<group>";
 		};
 		B1C2F17F291F8AE3006F5E8A /* Application */ = {
@@ -111,24 +110,14 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		B1C2F180291F8B13006F5E8A /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		B1C2F181291F8B36006F5E8A /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		B1C2F182291F8CB8006F5E8A /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
 				B1C2F183291F8CE8006F5E8A /* TabbarViewController.swift */,
+				D5A6A24E2927EB7E0059A289 /* bookingViewController.swift */,
+				D5A6A2502927EC440059A289 /* discountViewController.swift */,
+				D5A6A2522927EC5C0059A289 /* productViewController.swift */,
+				D5A6A2542927EC6D0059A289 /* ticketViewController.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -148,6 +137,29 @@
 				B1C2F19829221BFE006F5E8A /* Font.swift */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D5A6A23729265AC60059A289 /* Booking */ = {
+			isa = PBXGroup;
+			children = (
+				D5A6A23829265AD70059A289 /* Models */,
+				D5A6A23B29265AFC0059A289 /* Views */,
+			);
+			path = Booking;
+			sourceTree = "<group>";
+		};
+		D5A6A23829265AD70059A289 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D5A6A23B29265AFC0059A289 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,10 +253,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5A6A2552927EC6D0059A289 /* ticketViewController.swift in Sources */,
+				D5A6A24F2927EB7E0059A289 /* bookingViewController.swift in Sources */,
 				B1C2F19929221BFE006F5E8A /* Font.swift in Sources */,
 				B1C2F15F291F824A006F5E8A /* AppDelegate.swift in Sources */,
+				D5A6A2532927EC5C0059A289 /* productViewController.swift in Sources */,
 				B1C2F161291F824A006F5E8A /* SceneDelegate.swift in Sources */,
 				B1C2F184291F8CE8006F5E8A /* TabbarViewController.swift in Sources */,
+				D5A6A2512927EC440059A289 /* discountViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
