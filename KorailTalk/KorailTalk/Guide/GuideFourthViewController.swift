@@ -1,16 +1,17 @@
 //
-//  GuideFirstViewController.swift
+//  GuideFourthViewController.swift
 //  KorailTalk
 //
-//  Created by 정채은 on 2022/11/14.
+//  Created by 정채은 on 2022/11/18.
 //
+
 
 import UIKit
 import SnapKit
 import SwiftyColor
 import Then
 
-class GuideFirstViewController: UIViewController {
+class GuideFourthViewController: UIViewController {
     
     private let guideLabel: UILabel = {
         let label = UILabel()
@@ -22,7 +23,7 @@ class GuideFirstViewController: UIViewController {
     
     private let titleLabel : UILabel = {
         let label = UILabel()
-        label.text = "타인 양도 불가"
+        label.text = "적립대상 제외"
         label.font = .Pretendard-Bold
         label.textColor = 0x0B4199.color
         return label
@@ -31,7 +32,7 @@ class GuideFirstViewController: UIViewController {
     private let imageView : UIImageView = {
         let aImageView = UIImageView()
         aImageView.backgroundColor = .clear
-        aImageView.image = UIImage(named: "traveling back to home")
+        aImageView.image = UIImage(named: "Online Certificate Course")
         aImageView.translatesAutoresizingMaskIntoConstraints = false
         return aImageView
     }()
@@ -40,16 +41,16 @@ class GuideFirstViewController: UIViewController {
         let label = UILabel()
         label.font = .Pretendard-SemiBold
         label.textColor = 0x0B4199.color
-        label.text = "내일로 두번째 이야기 패스의 기명인만\n사용가능하며 타인 양도가 절대 불가합니다.\n(부정사용 시 최대 30배 부가운임 징수)"
+        label.text = "열차의 지연, 운행중지, 도중 여행중지 등에\n따른 보상 및 마일리지 적립대상에서 제외됩니다."
         label.textAlignment = .center
-        label.numberOfLines = 3
+        label.numberOfLines = 5
         return label
     }()
     
     private let pageLabel : UILabel = {
         let label = UILabel()
-        label.text = "1/5"
-        label.font = .Pretendard-SemiBold
+        label.text = "4/5"
+        label.font =.Pretendard-SemiBold
         label.textColor = 0x0B4199.color
         return label
     }()
@@ -57,6 +58,12 @@ class GuideFirstViewController: UIViewController {
     private let rightButton : UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "button_right"), for: .normal)
+        return button
+    }()
+    
+    private let leftButton : UIButton = {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "button_left"), for: .normal)
         return button
     }()
 
@@ -74,10 +81,10 @@ class GuideFirstViewController: UIViewController {
 //    }
 }
 
-extension GuideFirstViewController {
+extension GuideFourthViewController {
     private func layout() {
         let components: [Any] = [guideLabel, titleLabel,
-     imageView, infoLabel, pageLabel, rightButton]
+     imageView, infoLabel, pageLabel, rightButton, leftButton]
         components.forEach {
             view.addSubview($0 as! UIView)
         }
@@ -86,20 +93,18 @@ extension GuideFirstViewController {
             make.bottom.equalTo(self.titleLabel.snp.top).offset(-4)
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(37)
         }
-        
         titleLabel.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.imageView.snp.top).offset(-120)
+            make.bottom.equalTo(self.imageView.snp.top).offset(-48)
             make.leading.equalTo(self.guideLabel.snp.leading)
         }
         imageView.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.infoLabel.snp.top).offset(-108)
-            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(45)
-            make.height.equalTo(122)
-            make.width.equalTo(287)
+            make.bottom.equalTo(self.infoLabel.snp.top).offset(-92)
+            make.centerX.equalToSuperview()
+            make.height.width.equalTo(266)
         }
         infoLabel.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.pageLabel.snp.top).offset(-124)
-            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(45)
+            make.bottom.equalTo(self.pageLabel.snp.top).offset(-95)
+            make.centerX.equalToSuperview()
         }
         pageLabel.snp.makeConstraints{ make in
             make.bottom.equalTo(self.view.safeAreaInsets).inset(68)
@@ -110,5 +115,11 @@ extension GuideFirstViewController {
             make.height.width.equalTo(40)
             make.bottom.equalTo(self.view.safeAreaInsets).inset(59)
         }
+        leftButton.snp.makeConstraints{ make in
+            make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(34)
+            make.height.width.equalTo(40)
+            make.bottom.equalTo(self.view.safeAreaInsets).inset(59)
+        }
     }
 }
+
