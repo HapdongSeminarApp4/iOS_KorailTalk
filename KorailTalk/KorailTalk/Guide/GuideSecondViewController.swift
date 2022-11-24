@@ -15,7 +15,8 @@ class GuideSecondViewController: UIViewController {
     private let guideLabel: UILabel = {
         let label = UILabel()
         label.text = "동의 안내"
-        label.font = .Pretendard-SemiBold
+        label.font = .systemFont(ofSize: 16, weight: .semibold)
+//        label.font = .Pretendard-SemiBold
         label.textColor = 0x0B4199.color
         return label
     }()
@@ -23,7 +24,8 @@ class GuideSecondViewController: UIViewController {
     private let titleLabel : UILabel = {
         let label = UILabel()
         label.text = "이용 가능 열차"
-        label.font = .Pretendard-Bold
+        label.font = .systemFont(ofSize: 20, weight: .bold)
+//        label.font = .Pretendard-Bold
         label.textColor = 0x0B4199.color
         return label
     }()
@@ -38,7 +40,8 @@ class GuideSecondViewController: UIViewController {
     
     private let ktxLabel : UILabel = {
         let label = UILabel()
-        label.font = .Pretendard-SemiBold
+        label.font = .systemFont(ofSize: 16, weight: .semibold)
+//        label.font = .Pretendard-SemiBold
         label.textColor = 0x0B4199.color
         label.text = "KTX"
         return label
@@ -46,7 +49,8 @@ class GuideSecondViewController: UIViewController {
     
     private let ktxinfo1Label : UILabel = {
         let label = UILabel()
-        label.font = .Pretendard-Medium
+        label.font = .systemFont(ofSize: 14)
+//        label.font = .Pretendard-Medium
         label.textColor = 0x555555.color
         label.text = "KTX의 좌석 2회 (1일 1회, 총 2회)"
         return label
@@ -54,7 +58,8 @@ class GuideSecondViewController: UIViewController {
     
     private let ktxinfo2Label : UILabel = {
         let label = UILabel()
-        label.font = .Pretendard-Medium
+//        label.font = .Pretendard-Medium
+        label.font = .systemFont(ofSize: 14)
         label.textColor = 0x555555.color
         label.text = "KTX의 입석(자유석) 이용 불가"
         return label
@@ -62,7 +67,8 @@ class GuideSecondViewController: UIViewController {
     
     private let regularLabel : UILabel = {
         let label = UILabel()
-        label.font =.Pretendard-SemiBold
+        label.font = .systemFont(ofSize: 16, weight: .semibold)
+//        label.font = .Pretendard-SemiBold
         label.textColor = 0x0B4199.color
         label.text = "일반열차"
         return label
@@ -70,7 +76,8 @@ class GuideSecondViewController: UIViewController {
     
     private let regularinfo1Label : UILabel = {
         let label = UILabel()
-        label.font =.Pretendard-Medium
+//        label.font = .Pretendard-Medium
+        label.font = .systemFont(ofSize: 14)
         label.textColor = 0x555555.color
         label.text = "ITX-청춘, ITX-새마을, 새마을,\n무궁화, 누리호, 통근열차의 좌석 (1일 2회)"
         label.numberOfLines = 2
@@ -79,7 +86,8 @@ class GuideSecondViewController: UIViewController {
     
     private let regularinfo2Label : UILabel = {
         let label = UILabel()
-        label.font = .Pretendard-Medium
+//        label.font = .Pretendard-Medium
+        label.font = .systemFont(ofSize: 14)
         label.textColor = 0x555555.color
         label.text = "일반열차 입석(자유석)"
         return label
@@ -88,7 +96,8 @@ class GuideSecondViewController: UIViewController {
     private let pageLabel : UILabel = {
         let label = UILabel()
         label.text = "2/5"
-        label.font = .Pretendard-SemiBold
+        label.font = .systemFont(ofSize: 18, weight: .semibold)
+//        label.font = .Pretendard-SemiBold
         label.textColor = 0x0B4199.color
         return label
     }()
@@ -96,12 +105,14 @@ class GuideSecondViewController: UIViewController {
     private let rightButton : UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "button_right"), for: .normal)
+        button.addTarget(self, action: #selector(touchupNextButton), for: .touchUpInside)
         return button
     }()
     
     private let leftButton : UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "button_left"), for: .normal)
+        button.addTarget(self, action: #selector(touchupBackButton), for: .touchUpInside)
         return button
     }()
 
@@ -109,6 +120,44 @@ class GuideSecondViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         layout()
+        self.setNavigationBar()
+    }
+    
+    
+    private func setNavigationBar() {
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 36))
+        let topTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 18))
+        
+        topTitle.numberOfLines = 1
+        topTitle.textAlignment = .center
+        topTitle.font = .systemFont(ofSize: 15)
+        topTitle.textColor = .white
+        topTitle.text = "내일로 두번째 이야기"
+        
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+            backBarButtonItem.tintColor = .red
+            self.navigationItem.backBarButtonItem = backBarButtonItem
+        
+        containerView.addSubview(topTitle)
+        
+        self.navigationItem.titleView = containerView
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
+    }
+    
+    private func pushToThirdVC() {
+        let thirdVC = GuideThirdViewController()
+        self.navigationController?.pushViewController(thirdVC, animated: false)
+    }
+
+    @objc
+    private func touchupNextButton(){
+        pushToThirdVC()
+    }
+
+    @objc
+    private func touchupBackButton(){
+        self.navigationController?.popViewController(animated: false)
     }
 
 }
@@ -122,42 +171,42 @@ extension GuideSecondViewController {
         }
         
         guideLabel.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.titleLabel.snp.top).offset(-4)
+            make.top.equalToSuperview().offset(156)
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(37)
         }
         
         titleLabel.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.imageView.snp.top).offset(-46)
+            make.top.equalTo(self.guideLabel.snp.bottom).offset(4)
             make.leading.equalTo(self.guideLabel.snp.leading)
         }
         imageView.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.ktxLabel.snp.top).offset(-48)
+            make.top.equalTo(self.titleLabel.snp.bottom).offset(46)
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(48)
             make.height.equalTo(174)
             make.width.equalTo(284)
         }
         ktxLabel.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.ktxinfo1Label.snp.top).offset(-4)
+            make.top.equalTo(self.imageView.snp.bottom).offset(48)
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(47)
         }
         ktxinfo1Label.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.ktxinfo2Label.snp.top).offset(-4)
+            make.top.equalTo(self.ktxLabel.snp.bottom).offset(4)
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(47)
         }
         ktxinfo2Label.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.regularLabel.snp.top).offset(-22)
+            make.top.equalTo(self.ktxinfo1Label.snp.bottom).offset(4)
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(47)
         }
         regularLabel.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.regularinfo1Label.snp.top).offset(-4)
+            make.top.equalTo(self.ktxinfo2Label.snp.bottom).offset(22)
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(47)
         }
         regularinfo1Label.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.regularinfo2Label.snp.top).offset(-4)
+            make.top.equalTo(self.regularLabel.snp.bottom).offset(4)
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(47)
         }
         regularinfo2Label.snp.makeConstraints{ make in
-            make.bottom.equalTo(self.pageLabel.snp.top).offset(-120)
+            make.top.equalTo(self.regularinfo1Label.snp.bottom).offset(4)
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(47)
         }
         
