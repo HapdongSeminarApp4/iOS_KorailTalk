@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "pageboy",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/uias/Pageboy",
+      "state" : {
+        "revision" : "5522aa6ae88633f6c23cf504e9cd684e963822f1",
+        "version" : "4.0.2"
+      }
+    },
+    {
       "identity" : "reactiveswift",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
@@ -52,6 +61,15 @@
       "state" : {
         "branch" : "master",
         "revision" : "846c1c5d0e97d2b5f6b1bcb3343833eec128c6e9"
+      }
+    },
+    {
+      "identity" : "tabman",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/uias/Tabman",
+      "state" : {
+        "revision" : "6a87a2825939f5da06cf52a6582d67a646488cff",
+        "version" : "3.0.1"
       }
     },
     {
