@@ -102,14 +102,14 @@ class GuideSecondViewController: UIViewController {
         return label
     }()
     
-    private let rightButton : UIButton = {
+    lazy var rightButton : UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "button_right"), for: .normal)
         button.addTarget(self, action: #selector(touchupNextButton), for: .touchUpInside)
         return button
     }()
     
-    private let leftButton : UIButton = {
+    lazy var leftButton : UIButton = {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "button_left"), for: .normal)
         button.addTarget(self, action: #selector(touchupBackButton), for: .touchUpInside)
@@ -122,28 +122,50 @@ class GuideSecondViewController: UIViewController {
         layout()
         self.setNavigationBar()
     }
-    
-    
     private func setNavigationBar() {
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 36))
-        let topTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 18))
+        let topTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 199, height: 29))
         
+
         topTitle.numberOfLines = 1
         topTitle.textAlignment = .center
-        topTitle.font = .systemFont(ofSize: 15)
+        topTitle.font = .systemFont(ofSize: 24, weight: .semibold)
         topTitle.textColor = .white
         topTitle.text = "내일로 두번째 이야기"
-        
-        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
-            backBarButtonItem.tintColor = .red
+
+        let backBarButtonItem = UIBarButtonItem(
+//            image: UIImage(named:"button_back"),
+            title: "",
+            style: .plain,
+            target: self,
+            action:  #selector(backTapped))
+            backBarButtonItem.tintColor = .white
             self.navigationItem.backBarButtonItem = backBarButtonItem
-        
+
+
         containerView.addSubview(topTitle)
-        
+
         self.navigationItem.titleView = containerView
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor =  0x0B4199.color
+        self.navigationController?.navigationBar.barTintColor = .systemCyan
         
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor =  0x0B4199.color
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
+        
+        self.navigationController?.navigationBar.isTranslucent = false
+        
+    
+
     }
+    @objc func backTapped(sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: false)
+    }
+
     
     private func pushToThirdVC() {
         let thirdVC = GuideThirdViewController()
@@ -171,7 +193,7 @@ extension GuideSecondViewController {
         }
         
         guideLabel.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(156)
+            make.top.equalToSuperview().offset(48)
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(37)
         }
         

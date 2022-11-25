@@ -20,6 +20,7 @@
 		C359FDC6292760440089DE21 /* GuideThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C359FDC5292760440089DE21 /* GuideThirdViewController.swift */; };
 		C359FDC8292761340089DE21 /* GuideFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C359FDC7292761340089DE21 /* GuideFourthViewController.swift */; };
 		C36B59842927635F00C4CBEF /* GuideFifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36B59832927635F00C4CBEF /* GuideFifthViewController.swift */; };
+		C3A707EF2930696400BC0856 /* GuideNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A707EE2930696400BC0856 /* GuideNavigationBar.swift */; };
 		C3ACD64D2922897300128AA1 /* GuideFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ACD64C2922897300128AA1 /* GuideFirstViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		C359FDC5292760440089DE21 /* GuideThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideThirdViewController.swift; sourceTree = "<group>"; };
 		C359FDC7292761340089DE21 /* GuideFourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideFourthViewController.swift; sourceTree = "<group>"; };
 		C36B59832927635F00C4CBEF /* GuideFifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideFifthViewController.swift; sourceTree = "<group>"; };
+		C3A707EE2930696400BC0856 /* GuideNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideNavigationBar.swift; sourceTree = "<group>"; };
 		C3ACD64C2922897300128AA1 /* GuideFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideFirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 				C359FDC5292760440089DE21 /* GuideThirdViewController.swift */,
 				C359FDC7292761340089DE21 /* GuideFourthViewController.swift */,
 				C36B59832927635F00C4CBEF /* GuideFifthViewController.swift */,
+				C3A707EE2930696400BC0856 /* GuideNavigationBar.swift */,
 			);
 			path = Guide;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				C359FDC6292760440089DE21 /* GuideThirdViewController.swift in Sources */,
 				C3ACD64D2922897300128AA1 /* GuideFirstViewController.swift in Sources */,
 				C359FDC8292761340089DE21 /* GuideFourthViewController.swift in Sources */,
+				C3A707EF2930696400BC0856 /* GuideNavigationBar.swift in Sources */,
 				B1C2F184291F8CE8006F5E8A /* TabbarViewController.swift in Sources */,
 				C36B59842927635F00C4CBEF /* GuideFifthViewController.swift in Sources */,
 			);
