@@ -10,7 +10,7 @@ import SwiftyColor
 
 class CheckViewController: UIViewController {
     
-    // SegmentedControl 담을 뷰
+    // SegmentControl 담을 뷰
     private lazy var containerView: UIView = {
         let container = UIView()
         container.backgroundColor = .white
@@ -67,6 +67,30 @@ class CheckViewController: UIViewController {
     }()
     
     
+    
+    let firstView: UIView = {
+        let view = UIView()
+        view.backgroundColor = 0xEFEFEF.color
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+      }()
+      let secondView: UIView = {
+        let view = UIView()
+        view.backgroundColor = 0xEFEFEF.color
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+      }()
+    var shouldHideFirstView: Bool? {
+        didSet {
+          guard let shouldHideFirstView = self.shouldHideFirstView else { return }
+          self.firstView.isHidden = shouldHideFirstView
+          self.secondView.isHidden = !self.firstView.isHidden
+        }
+      }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = 0xEFEFEF.color
@@ -78,12 +102,13 @@ class CheckViewController: UIViewController {
         containerView.addSubview(segmentControl)
         containerView.addSubview(underLineView)
         
+        self.view.addSubview(self.firstView)
+        self.view.addSubview(self.secondView)
+        
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             containerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            //containerView.widthAnchor.constraint(equalToConstant: 250),
-            //containerView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             containerView.heightAnchor.constraint(equalToConstant: 55),
             
             segmentControl.topAnchor.constraint(equalTo: containerView.topAnchor),
@@ -96,6 +121,27 @@ class CheckViewController: UIViewController {
             leadingDistance,
             underLineView.widthAnchor.constraint(equalTo: segmentControl.widthAnchor, multiplier: 1 / CGFloat(segmentControl.numberOfSegments))
         ])
+        NSLayoutConstraint.activate([
+              self.firstView.leftAnchor.constraint(equalTo: self.segmentControl.leftAnchor),
+              self.firstView.rightAnchor.constraint(equalTo: self.segmentControl.rightAnchor),
+              self.firstView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -80),
+              self.firstView.topAnchor.constraint(equalTo: self.segmentControl.bottomAnchor, constant: 16),
+            ])
+            NSLayoutConstraint.activate([
+              self.secondView.leftAnchor.constraint(equalTo: self.firstView.leftAnchor),
+              self.secondView.rightAnchor.constraint(equalTo: self.firstView.rightAnchor),
+              self.secondView.bottomAnchor.constraint(equalTo: self.firstView.bottomAnchor),
+              self.secondView.topAnchor.constraint(equalTo: self.firstView.topAnchor),
+            ])
+            
+            self.segmentControl.addTarget(self, action: #selector(didChangeValue(segment:)), for: .valueChanged)
+            
+            self.segmentControl.selectedSegmentIndex = 0
+            self.didChangeValue(segment: self.segmentControl)
+    }
+    
+    @objc private func didChangeValue(segment: UISegmentedControl) {
+      self.shouldHideFirstView = segment.selectedSegmentIndex != 0
     }
     
     @objc private func changeUnderLinePosition() {
