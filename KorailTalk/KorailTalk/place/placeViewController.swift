@@ -1,5 +1,5 @@
 //
-//  productViewController.swift
+//  placeViewController.swift
 //  KorailTalk
 //
 //  Created by 김다운 on 2022/11/19.
@@ -7,23 +7,10 @@
 
 import UIKit
 
-import SnapKit
-
-class productViewController: UIViewController {
-    
-    private var lineView: UIView = {
-        let view = UIView()
-        return view
-    }()
+class placeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.addSubview(lineView)
-        lineView.snp.makeConstraints { make in
-            make.height.equalTo(1)
-            make.leading.trailing.equalToSuperview()
-        }
 
         // Do any additional setup after loading the view.
     }

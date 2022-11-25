@@ -26,10 +26,15 @@
 		B1C2F1AA29221CFD006F5E8A /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1C2F1A129221CFD006F5E8A /* Pretendard-Bold.otf */; };
 		B1C2F1AB29221CFD006F5E8A /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1C2F1A229221CFD006F5E8A /* Pretendard-ExtraLight.otf */; };
 		B1C2F1AC29221CFD006F5E8A /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = B1C2F1A329221CFD006F5E8A /* Pretendard-Light.otf */; };
-		D5A6A24F2927EB7E0059A289 /* bookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6A24E2927EB7E0059A289 /* bookingViewController.swift */; };
 		D5A6A2512927EC440059A289 /* discountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6A2502927EC440059A289 /* discountViewController.swift */; };
 		D5A6A2532927EC5C0059A289 /* productViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6A2522927EC5C0059A289 /* productViewController.swift */; };
 		D5A6A2552927EC6D0059A289 /* ticketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6A2542927EC6D0059A289 /* ticketViewController.swift */; };
+		D5A6A2592928036E0059A289 /* bookingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6A2582928036E0059A289 /* bookingTableViewCell.swift */; };
+		D5A6A26C2928ADF50059A289 /* placeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A6A26B2928ADF50059A289 /* placeViewController.swift */; };
+		D5FA8BFB292FDC0800C24326 /* bookingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA8BFA292FDC0800C24326 /* bookingViewController.swift */; };
+		D5FA8BFD292FEA6400C24326 /* storyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA8BFC292FEA6400C24326 /* storyTableViewCell.swift */; };
+		D5FA8BFF292FFC4100C24326 /* shuttleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA8BFE292FFC4100C24326 /* shuttleTableViewCell.swift */; };
+		D5FA8C012930B4E200C24326 /* locationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FA8C002930B4E200C24326 /* locationTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,10 +55,15 @@
 		B1C2F1A129221CFD006F5E8A /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		B1C2F1A229221CFD006F5E8A /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		B1C2F1A329221CFD006F5E8A /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
-		D5A6A24E2927EB7E0059A289 /* bookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookingViewController.swift; sourceTree = "<group>"; };
 		D5A6A2502927EC440059A289 /* discountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = discountViewController.swift; sourceTree = "<group>"; };
 		D5A6A2522927EC5C0059A289 /* productViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = productViewController.swift; sourceTree = "<group>"; };
 		D5A6A2542927EC6D0059A289 /* ticketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ticketViewController.swift; sourceTree = "<group>"; };
+		D5A6A2582928036E0059A289 /* bookingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookingTableViewCell.swift; sourceTree = "<group>"; };
+		D5A6A26B2928ADF50059A289 /* placeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeViewController.swift; sourceTree = "<group>"; };
+		D5FA8BFA292FDC0800C24326 /* bookingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bookingViewController.swift; sourceTree = "<group>"; };
+		D5FA8BFC292FEA6400C24326 /* storyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = storyTableViewCell.swift; sourceTree = "<group>"; };
+		D5FA8BFE292FFC4100C24326 /* shuttleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shuttleTableViewCell.swift; sourceTree = "<group>"; };
+		D5FA8C002930B4E200C24326 /* locationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = locationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,7 @@
 		B1C2F15D291F824A006F5E8A /* KorailTalk */ = {
 			isa = PBXGroup;
 			children = (
+				D5A6A26A2928AD7E0059A289 /* place */,
 				B1C2F19A29221CDE006F5E8A /* Fonts */,
 				B1C2F182291F8CB8006F5E8A /* Tabbar */,
 				B1C2F17F291F8AE3006F5E8A /* Application */,
@@ -114,10 +125,14 @@
 			isa = PBXGroup;
 			children = (
 				B1C2F183291F8CE8006F5E8A /* TabbarViewController.swift */,
-				D5A6A24E2927EB7E0059A289 /* bookingViewController.swift */,
+				D5FA8BFA292FDC0800C24326 /* bookingViewController.swift */,
 				D5A6A2502927EC440059A289 /* discountViewController.swift */,
 				D5A6A2522927EC5C0059A289 /* productViewController.swift */,
 				D5A6A2542927EC6D0059A289 /* ticketViewController.swift */,
+				D5A6A2582928036E0059A289 /* bookingTableViewCell.swift */,
+				D5FA8BFC292FEA6400C24326 /* storyTableViewCell.swift */,
+				D5FA8BFE292FFC4100C24326 /* shuttleTableViewCell.swift */,
+				D5FA8C002930B4E200C24326 /* locationTableViewCell.swift */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -160,6 +175,14 @@
 			children = (
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D5A6A26A2928AD7E0059A289 /* place */ = {
+			isa = PBXGroup;
+			children = (
+				D5A6A26B2928ADF50059A289 /* placeViewController.swift */,
+			);
+			path = place;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +277,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5A6A2552927EC6D0059A289 /* ticketViewController.swift in Sources */,
-				D5A6A24F2927EB7E0059A289 /* bookingViewController.swift in Sources */,
+				D5FA8BFB292FDC0800C24326 /* bookingViewController.swift in Sources */,
+				D5FA8BFF292FFC4100C24326 /* shuttleTableViewCell.swift in Sources */,
+				D5A6A26C2928ADF50059A289 /* placeViewController.swift in Sources */,
 				B1C2F19929221BFE006F5E8A /* Font.swift in Sources */,
 				B1C2F15F291F824A006F5E8A /* AppDelegate.swift in Sources */,
+				D5FA8C012930B4E200C24326 /* locationTableViewCell.swift in Sources */,
+				D5A6A2592928036E0059A289 /* bookingTableViewCell.swift in Sources */,
+				D5FA8BFD292FEA6400C24326 /* storyTableViewCell.swift in Sources */,
 				D5A6A2532927EC5C0059A289 /* productViewController.swift in Sources */,
 				B1C2F161291F824A006F5E8A /* SceneDelegate.swift in Sources */,
 				B1C2F184291F8CE8006F5E8A /* TabbarViewController.swift in Sources */,
