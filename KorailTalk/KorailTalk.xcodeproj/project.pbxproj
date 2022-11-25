@@ -20,6 +20,10 @@
 		C359FDC6292760440089DE21 /* GuideThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C359FDC5292760440089DE21 /* GuideThirdViewController.swift */; };
 		C359FDC8292761340089DE21 /* GuideFourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C359FDC7292761340089DE21 /* GuideFourthViewController.swift */; };
 		C36B59842927635F00C4CBEF /* GuideFifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36B59832927635F00C4CBEF /* GuideFifthViewController.swift */; };
+		C3A707F1293089E100BC0856 /* CheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A707F0293089E100BC0856 /* CheckViewController.swift */; };
+		C3A707F4293090D900BC0856 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = C3A707F3293090D900BC0856 /* Tabman */; };
+		C3A707F629309D7800BC0856 /* TicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A707F529309D7800BC0856 /* TicketViewController.swift */; };
+		C3A707F829309D8700BC0856 /* SeasonTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A707F729309D8700BC0856 /* SeasonTicketViewController.swift */; };
 		C3ACD64D2922897300128AA1 /* GuideFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3ACD64C2922897300128AA1 /* GuideFirstViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +39,9 @@
 		C359FDC5292760440089DE21 /* GuideThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideThirdViewController.swift; sourceTree = "<group>"; };
 		C359FDC7292761340089DE21 /* GuideFourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideFourthViewController.swift; sourceTree = "<group>"; };
 		C36B59832927635F00C4CBEF /* GuideFifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideFifthViewController.swift; sourceTree = "<group>"; };
+		C3A707F0293089E100BC0856 /* CheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckViewController.swift; sourceTree = "<group>"; };
+		C3A707F529309D7800BC0856 /* TicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketViewController.swift; sourceTree = "<group>"; };
+		C3A707F729309D8700BC0856 /* SeasonTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonTicketViewController.swift; sourceTree = "<group>"; };
 		C3ACD64C2922897300128AA1 /* GuideFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideFirstViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3A707F4293090D900BC0856 /* Tabman in Frameworks */,
 				B1C2F177291F82CE006F5E8A /* SwiftyColor in Frameworks */,
 				B1C2F17A291F82DC006F5E8A /* Then in Frameworks */,
 				B1C2F17D291F8361006F5E8A /* Moya in Frameworks */,
@@ -76,6 +84,7 @@
 				B1C2F17F291F8AE3006F5E8A /* Application */,
 				B1C2F17E291F899D006F5E8A /* Booking */,
 				C3ACD64B292288DF00128AA1 /* Guide */,
+				C3A707F92930A11B00BC0856 /* Check */,
 				B1C2F16C291F824B006F5E8A /* Info.plist */,
 				B1C2F167291F824B006F5E8A /* Assets.xcassets */,
 				B1C2F169291F824B006F5E8A /* LaunchScreen.storyboard */,
@@ -123,6 +132,16 @@
 			path = Tabbar;
 			sourceTree = "<group>";
 		};
+		C3A707F92930A11B00BC0856 /* Check */ = {
+			isa = PBXGroup;
+			children = (
+				C3A707F0293089E100BC0856 /* CheckViewController.swift */,
+				C3A707F529309D7800BC0856 /* TicketViewController.swift */,
+				C3A707F729309D8700BC0856 /* SeasonTicketViewController.swift */,
+			);
+			path = Check;
+			sourceTree = "<group>";
+		};
 		C3ACD64B292288DF00128AA1 /* Guide */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +175,7 @@
 				B1C2F176291F82CE006F5E8A /* SwiftyColor */,
 				B1C2F179291F82DC006F5E8A /* Then */,
 				B1C2F17C291F8361006F5E8A /* Moya */,
+				C3A707F3293090D900BC0856 /* Tabman */,
 			);
 			productName = KorailTalk;
 			productReference = B1C2F15B291F824A006F5E8A /* KorailTalk.app */;
@@ -190,6 +210,7 @@
 				B1C2F175291F82CE006F5E8A /* XCRemoteSwiftPackageReference "SwiftyColor" */,
 				B1C2F178291F82DC006F5E8A /* XCRemoteSwiftPackageReference "Then" */,
 				B1C2F17B291F8361006F5E8A /* XCRemoteSwiftPackageReference "Moya" */,
+				C3A707F2293090D900BC0856 /* XCRemoteSwiftPackageReference "Tabman" */,
 			);
 			productRefGroup = B1C2F15C291F824A006F5E8A /* Products */;
 			projectDirPath = "";
@@ -223,7 +244,10 @@
 				C359FDC6292760440089DE21 /* GuideThirdViewController.swift in Sources */,
 				C3ACD64D2922897300128AA1 /* GuideFirstViewController.swift in Sources */,
 				C359FDC8292761340089DE21 /* GuideFourthViewController.swift in Sources */,
+				C3A707F629309D7800BC0856 /* TicketViewController.swift in Sources */,
+				C3A707F1293089E100BC0856 /* CheckViewController.swift in Sources */,
 				B1C2F184291F8CE8006F5E8A /* TabbarViewController.swift in Sources */,
+				C3A707F829309D8700BC0856 /* SeasonTicketViewController.swift in Sources */,
 				C36B59842927635F00C4CBEF /* GuideFifthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +490,14 @@
 				minimumVersion = 15.0.0;
 			};
 		};
+		C3A707F2293090D900BC0856 /* XCRemoteSwiftPackageReference "Tabman" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uias/Tabman";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -488,6 +520,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B1C2F17B291F8361006F5E8A /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		C3A707F3293090D900BC0856 /* Tabman */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C3A707F2293090D900BC0856 /* XCRemoteSwiftPackageReference "Tabman" */;
+			productName = Tabman;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

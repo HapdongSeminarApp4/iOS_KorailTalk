@@ -67,7 +67,7 @@ class GuideFifthViewController: UIViewController {
         return label
     }()
     
-    private let rightButton : UIButton = {
+    lazy var leftButton : UIButton = {
         let button = UIButton(type: .custom)
         button.backgroundColor = 0xFFC9C9.color
         button.setTitle("비동의", for: .normal)
@@ -75,10 +75,11 @@ class GuideFifthViewController: UIViewController {
         button.setTitleColor(0x555555.color, for: .normal)
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(touchupFirstButton), for: .touchUpInside)
         return button
     }()
     
-    private let leftButton : UIButton = {
+    lazy var rightButton : UIButton = {
         let button = UIButton(type: .custom)
         button.backgroundColor = 0xD0DFEC.color
         button.setTitle("동의", for: .normal)
@@ -86,6 +87,8 @@ class GuideFifthViewController: UIViewController {
         button.setTitleColor(0x555555.color, for: .normal)
         button.layer.cornerRadius = 10
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(touchupNextButton), for: .touchUpInside)
+        
         return button
     }()
 
@@ -93,14 +96,67 @@ class GuideFifthViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         layout()
+        self.setNavigationBar()
+    }
+    private func setNavigationBar() {
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 36))
+        let topTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 199, height: 29))
+        
+
+        topTitle.numberOfLines = 1
+        topTitle.textAlignment = .center
+        topTitle.font = .systemFont(ofSize: 24, weight: .semibold)
+        topTitle.textColor = .white
+        topTitle.text = "내일로 두번째 이야기"
+
+        let backBarButtonItem = UIBarButtonItem(
+//            image: UIImage(named:"button_back"),
+            title: "",
+            style: .plain,
+            target: self,
+            action:  #selector(backTapped))
+            backBarButtonItem.tintColor = .white
+            self.navigationItem.backBarButtonItem = backBarButtonItem
+
+
+        containerView.addSubview(topTitle)
+
+        self.navigationItem.titleView = containerView
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.backgroundColor =  0x0B4199.color
+        self.navigationController?.navigationBar.barTintColor = .systemCyan
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor =  0x0B4199.color
+        self.navigationController?.navigationBar.standardAppearance = appearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = self.navigationController?.navigationBar.standardAppearance
+        
+        self.navigationController?.navigationBar.isTranslucent = false
+        
+    
+
     }
     
-//    private func setNavigationBar() {
-//        navigationController?.navigationBar.barTintColor = 0x0B4199.color
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
-//
-//    }
+
+    @objc
+    private func touchupNextButton(){
+        let checkVC = CheckViewController()
+        self.navigationController?.pushViewController(checkVC, animated: false)
+    }
+    
+    @objc
+    private func touchupFirstButton(){
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    
+    @objc func backTapped(sender: UIBarButtonItem) {
+        navigationController?.popViewController(animated: false)
+    }
+    
+    
 }
 
 extension GuideFifthViewController {
@@ -112,7 +168,7 @@ extension GuideFifthViewController {
         }
         
         guideLabel.snp.makeConstraints{ make in
-            make.top.equalToSuperview().offset(156)
+            make.top.equalToSuperview().offset(48)
             make.leading.equalTo(self.view.safeAreaLayoutGuide).offset(37)
         }
         titleLabel.snp.makeConstraints{ make in
@@ -133,13 +189,13 @@ extension GuideFifthViewController {
             make.bottom.equalTo(self.rightButton.snp.top).offset(-47)
             make.centerX.equalToSuperview()
         }
-        rightButton.snp.makeConstraints{ make in
+        leftButton.snp.makeConstraints{ make in
             make.leading.equalTo(self.view.safeAreaLayoutGuide).inset(36)
             make.bottom.equalTo(self.view.safeAreaInsets).inset(49)
             make.width.equalTo(150)
             make.height.equalTo(58)
         }
-        leftButton.snp.makeConstraints{ make in
+        rightButton.snp.makeConstraints{ make in
             make.trailing.equalTo(self.view.safeAreaLayoutGuide).inset(34)
             make.bottom.equalTo(self.view.safeAreaInsets).inset(49)
             make.width.equalTo(150)
